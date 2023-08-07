@@ -1,0 +1,120 @@
+/* Dashboard.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard component styles */
+div.dashboard-container {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+div.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+div.task-list {
+    display: grid;
+    grid-gap: 20px;
+}
+
+div.task-card {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Task status-specific styles */
+p.task-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+p.task-status.todo {
+    background-color: #fadcbb;
+    color: #f79725;
+}
+
+p.task-status.in-progress {
+    background-color: #c4d7f2;
+    color: #2f7ed8;
+}
+
+p.task-status.done {
+    background-color: #bcf2c4;
+    color: #10a94e;
+}
+
+div.header-topic {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    align-items: flex-start;
+}
+
+div.search-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+div.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
