@@ -1,5 +1,5 @@
 import { Card } from "@mui/material";
-import "./TicketCard.css";
+import "./index.css";
 
 export default function TicketCard({ content, issuedBy }) {
   return (
