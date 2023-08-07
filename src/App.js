@@ -1,6 +1,5 @@
 import './App.css';
-import Dashboard from './Components/Dashboard/Dashboard';
-
+import Dashboard from './pages/dashboard';
 function App() {
   return (
     <div className="App">
