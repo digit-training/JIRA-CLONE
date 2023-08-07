@@ -4,6 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+/.yarn
+.pnp.cjs
+.pnp.loader.mjs
+.yarnrc.yml
+yarn.lock
 
 # testing
 /coverage
