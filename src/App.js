@@ -4,6 +4,7 @@ import PopupScreen from "./components/CreateIssue";
 import Sidebar from './Components/Sidebar';
 import './App.css';
 import Dashboard from './pages/dashboard';
+import Navbar from './components/Navbar';
 
 function App() {
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -22,8 +23,9 @@ function App() {
         Open Popup
       </Button>
       <PopupScreen open={isPopupOpen} onClose={handleClosePopup} />
-      <Sidebar />
-      <Dashboard />
+      <Navbar/>
+      <Sidebar/>
+      <Dashboard/>
     </div>
   );
 }
