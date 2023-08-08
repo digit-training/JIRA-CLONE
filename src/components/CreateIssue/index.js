@@ -56,8 +56,8 @@ const PopupScreen = ({ open, onClose }) => {
               onChange={handleChange}
             />
             <CustomDropdown
-              label="Issue type*"
-              name="Issue type"
+              label="Issue*"
+              name="Issue"
               value={formData.Issue}
               options={issueOptions}
               onChange={handleChange}
@@ -112,9 +112,6 @@ const PopupScreen = ({ open, onClose }) => {
             />
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="subtitle2" gutterBottom>
-              Components
-            </Typography>
             <CustomDropdown
               label="Components"
               name="Components"
