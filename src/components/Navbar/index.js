@@ -1,5 +1,5 @@
-import ApiIcon from '@mui/icons-material/Api';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import ApiIcon from "@mui/icons-material/Api";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Button } from "@mui/material";
@@ -53,10 +53,8 @@ function Navbar() {
       <button className="more-options-button" onClick={handleMoreOptionsClick}>
         <i className="fas fa-ellipsis-v"></i>
       </button>
-      <ApiIcon style={{marginLeft: '3px'}}></ApiIcon>
-      <span>
-        Jira Software
-      </span>
+      <ApiIcon style={{ marginLeft: "3px" }}></ApiIcon>
+      <span>Jira Software</span>
 
       <a href="#" onClick={handleHomeClick}>
         Home
@@ -72,7 +70,7 @@ function Navbar() {
       </a>
 
       <Button variant="contained" color="primary" onClick={handleOpenPopup}>
-        Open Popup
+        Create Issue
       </Button>
       <PopupScreen open={isPopupOpen} onClose={handleClosePopup} />
 
@@ -85,7 +83,7 @@ function Navbar() {
         />
         <i className="fas fa-search search-icon"></i>
       </div>
-      <NotificationsIcon style={{marginRight: '5px'}}> </NotificationsIcon>
+      <NotificationsIcon style={{ marginRight: "5px" }}> </NotificationsIcon>
       <div className="settings-icon">
         <i className="fas fa-cog"></i>
       </div>
