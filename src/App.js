@@ -1,12 +1,14 @@
-
 import Sidebar from './Components/Sidebar';
 import './App.css';
-import Dashboard from './pages/dashboard';
+import Navbar from './components/Navbar';
+import Dashboard  from './pages/dashboard';
+
 function App() {
   return (
     <div className="App">
-      <Sidebar />
-      <Dashboard />
+      <Navbar/>
+      <Sidebar/>
+      <Dashboard/>
     </div>
   );
 }
