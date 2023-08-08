@@ -6,6 +6,7 @@ import './App.css';
 
 import Dashboard from './pages/dashboard';
 import Navbar from './components/Navbar';
+import LoginPage from "./pages/loginpage";
 
 function App() {
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -19,9 +20,18 @@ function App() {
   };
   return (
     <div className="App">
+      <div>
+      <LoginPage />
+      {/* <br />
+      <br />
+      <br />
+      <br /> */}
+      </div>
+     
       <Navbar />
       <Sidebar />
       <Dashboard />
+
     </div>
   );
 }
