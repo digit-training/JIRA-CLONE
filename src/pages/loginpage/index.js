@@ -1,80 +1,134 @@
 import React, { useState } from 'react';
-import './index.css';
-
+import './login.css';
 const LoginPage = () => {
-
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [loginMessage, setLoginMessage] = useState('');
-
-
-    const handleUsernameChange = (e) => setUsername(e.target.value);
-    const handleEmailChange = (e) => setEmail(e.target.value);
-    const handlePasswordChange = (e) => setPassword(e.target.value);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handling login logic here
-        if (username && password && email) {
-            // Successful login
-            setLoginMessage("Login successful");
-        } else if (username === "" || password === "" || email === "") {
-            setLoginMessage("Fill in required info");
-        } else {
-            // Invalid credentials
-            setLoginMessage("Invalid credentials");
-        }
-    };
-
-    return (
-        <div className="login-container">
-            <h1>Login to Jira</h1>
-            <form>
-                <div className="input-container">
-                    <label>Username</label>
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        value={username}
-                        onChange={handleUsernameChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <label>Email</label>
-                    <input
-                        type="text"
-                        placeholder="Email Address"
-                        value={email}
-                        onChange={handleEmailChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={handlePasswordChange}
-                    />
-                </div>
-                <button className="login-button" type="button" onClick={handleSubmit}>
-                    Login
-                </button>
-                <p className="login-message">{loginMessage}</p>
-            </form>
-            <div className="links-container">
-                <a href="/forgot-password">Forgot Password?</a>
-            </div>
-            <div className="sign-txt">Not yet member? <a href="/signup">Signup now</a></div>
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginMessage, setLoginMessage] = useState("");
+  const [keepLoggedIn, setKeepLoggedIn] = useState(false);
+  const [language, setLanguage] = useState('en'); // 'en' for English, 'fr' for French
+  const keepLoginEng = " Keep me Logged in";
+  const handleUsernameChange = (e) => setUsername(e.target.value);
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleKeepLoggedInChange = () => {
+    setKeepLoggedIn(!keepLoggedIn);
+  };
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'fr' : 'en');
+  };
+  <div className="links-container">
+    <a href="/forgot-password">
+      {language === 'en' ? 'Forgot Password?' : 'Mot de passe oublié ?'}
+    </a>
+  </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (username && password && email) {
+      setLoginMessage(
+        language === 'en'
+          ? 'Login successful'
+          : 'Connexion réussie'
+      );
+    } else if (username === "" || password === "" || email === "") {
+      setLoginMessage(
+        language === 'en'
+          ? 'Fill in required details'
+          : ' sont requis'
+      );
+    } else {
+      setLoginMessage(
+        language === 'en'
+          ? 'Invalid credentials'
+          : 'Identifiants invalides'
+      );
+    }
+  };
+  return (
+    <div className="login-container">
+      <h1>{language === 'en' ? 'Login to Jira' : 'Connexion à Jira'}</h1>
+      <form>
+        <div className="input-container">
+          <label className="label">
+            {language === 'en' ? 'Username:' : 'Nom d\'utilisateur :'}
+          </label>
+          <input
+            type="text"
+            value={username}
+            placeholder='Username'
+            className='input-field'
+            onChange={handleUsernameChange}
+          />
         </div>
-    );
-
- 
-  
-     
-
+        <div className="input-container">
+          <label className="label">
+            {language === 'en' ? 'Email:' : 'Email :'}
+          </label>
+          <input
+            type="text"
+            value={email}
+            placeholder='Email Address'
+            className='input-field'
+            onChange={handleEmailChange}
+          />
+        </div>
+        <div className="input-container">
+          <label className="label">
+            {language === 'en' ? 'Password:' : 'Mot de passe :'}
+          </label>
+          <input
+            type="password"
+            value={password}
+            placeholder='Password'
+            className='input-field'
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <div className="input-container">
+          <div className="keep-logged-in">
+            <input
+              className="keep-logged-in-checkbox"
+              type="checkbox"
+              id="keepLoggedIn"
+              checked={keepLoggedIn}
+              onChange={handleKeepLoggedInChange}
+            />
+            <label htmlFor="keepLoggedIn">
+            &nbsp;
+              {language === 'en' ? keepLoginEng : ' Rester connecté '}
+            </label>
+          </div>
+        </div>
+        <div className="login-button-container">
+  <button className="login-button" type="button" onClick={handleSubmit}>
+    {language === 'en' ? 'Login' : 'Se connecter'}
+  </button>
+</div>
+        <div className='login-button-container'>
+        <p className="login-message">{loginMessage}</p>
+        </div>
+       
+      </form>
+      <div className="links-container">
+        <a href="/forgot-password">
+          {language === 'en' ? 'Forgot Password?' : 'Mot de passe oublié ?'}
+        </a>
+      </div>
+      <div className="sign-txt">
+        {language === 'en' ? 'Not yet a member? ' : 'Pas encore membre ? '}
+        <a href="/signup">
+          {language === 'en' ? 'Signup now' : 'Inscrivez-vous maintenant'}
+        </a>
+      </div>
+      <p>
+        {language === 'en'
+          ? 'By logging in, you agree to the '
+          : 'En vous connectant, vous acceptez la '}
+        <strong>{language === 'en' ? 'Privacy Policy' : 'Politique de confidentialité'}</strong>
+      </p><button className="lng-button" onClick={toggleLanguage}>
+        {language === 'en' ? 'Switch to French' : 'Passer en anglais'}
+      </button>
+    </div>
+  );
 };
-
-
 export default LoginPage;
