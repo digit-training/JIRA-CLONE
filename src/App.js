@@ -1,7 +1,9 @@
 import { useState } from "react";
-import "./App.css";
 import { Button } from "@mui/material";
 import PopupScreen from "./components/CreateIssue";
+import Sidebar from './Components/Sidebar';
+import './App.css';
+import Dashboard from './pages/dashboard';
 
 function App() {
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -20,6 +22,8 @@ function App() {
         Open Popup
       </Button>
       <PopupScreen open={isPopupOpen} onClose={handleClosePopup} />
+      <Sidebar />
+      <Dashboard />
     </div>
   );
 }
