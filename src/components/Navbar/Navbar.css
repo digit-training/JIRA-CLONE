@@ -1,0 +1,32 @@
+#navbar {
+    background-color: hsl(0, 19%, 93%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  #navbar a {
+    color: black;
+    text-align: left;
+    padding: 40px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  #navbar a:hover {
+    background-color: #555;
+  }
+  #search {
+    margin-left: auto;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 3px;
+  }
+/* style.css */
+#navbar span {
+    font-size: 24px; 
+    font-style: italic; 
+    color: black;
+    margin-left: 10px; 
+    margin-bottom: 30px;
+  }
+  
+  
