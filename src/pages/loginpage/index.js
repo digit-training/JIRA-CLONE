@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 
 const LoginPage = () => {
+
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -68,6 +69,11 @@ const LoginPage = () => {
             <div className="sign-txt">Not yet member? <a href="/signup">Signup now</a></div>
         </div>
     );
+
+ 
+  
+     
+
 };
 
 
