@@ -44,8 +44,9 @@ function Navbar() {
       <button className="more-options-button" onClick={handleMoreOptionsClick}>
         <i className="fas fa-ellipsis-v"></i>
       </button>
+      <ApiIcon style={{marginLeft: '3px'}}></ApiIcon>
       <span>
-        <ApiIcon style={{ marginRight: '5px' }} /> Jira Software
+        Jira Software
       </span>
       <a href="#" onClick={handleHomeClick}>Home</a>
       <a href="#" onClick={handleProjectsClick}>Projects</a>
