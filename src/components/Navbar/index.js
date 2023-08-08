@@ -1,3 +1,5 @@
+import ApiIcon from '@mui/icons-material/Api';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Button } from "@mui/material";
@@ -23,7 +25,6 @@ function Navbar() {
     // Implement your home link logic here
     alert("You clicked Home!");
   };
-
   const handleSignupClick = () => {
     // Implement your signup logic here
     alert("You clicked Signup!");
@@ -52,6 +53,11 @@ function Navbar() {
       <button className="more-options-button" onClick={handleMoreOptionsClick}>
         <i className="fas fa-ellipsis-v"></i>
       </button>
+      <ApiIcon style={{marginLeft: '3px'}}></ApiIcon>
+      <span>
+        Jira Software
+      </span>
+
       <a href="#" onClick={handleHomeClick}>
         Home
       </a>
@@ -79,6 +85,7 @@ function Navbar() {
         />
         <i className="fas fa-search search-icon"></i>
       </div>
+      <NotificationsIcon style={{marginRight: '5px'}}> </NotificationsIcon>
       <div className="settings-icon">
         <i className="fas fa-cog"></i>
       </div>
