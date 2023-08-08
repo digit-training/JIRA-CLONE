@@ -18,14 +18,9 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Popup Screen Example</h1>
-      <Button variant="contained" color="primary" onClick={handleOpenPopup}>
-        Open Popup
-      </Button>
-      <PopupScreen open={isPopupOpen} onClose={handleClosePopup} />
-      <Navbar/>
-      <Sidebar/>
-      <Dashboard/>
+      <Navbar />
+      <Sidebar />
+      <Dashboard />
     </div>
   );
 }
