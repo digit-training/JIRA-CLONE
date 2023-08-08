@@ -1,0 +1,136 @@
+/* Dashboard.css */
+
+
+/* Dashboard component styles */
+div.dashboard-container {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+label {
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
+    color: #666;
+}
+
+
+
+div.header-topic {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    align-items: flex-start;
+}
+
+div.search-container {
+    /* margin-top: 20px; */
+    position: relative;
+    margin-bottom: 35px;
+    margin-right: 50px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+div.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+div.circles-container {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    /* margin-top: 20px; */
+}
+
+div.circle {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    /* Add pointer cursor */
+}
+
+div.search-div {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Add the following styles for the Workbench button */
+button.workbench-button {
+    height: 40px;
+    /* Adjust the height to match the search bar */
+    width: 100px;
+    /* Set the width to 100px */
+    margin-left: 10px;
+    /* Adjust the margin to add spacing between the button and the search bar */
+    padding: 0;
+    /* Remove any padding to ensure the button fits within the specified width and height */
+    border: none;
+    /* Remove the default border */
+    border-radius: 4px;
+    background-color: #c2d0df;
+    /* Customize the background color */
+    color: #000;
+    /* Set the text color to black */
+    cursor: pointer;
+}
+
+
+/* Additional styles to make the button look more prominent */
+button.workbench-button:hover {
+    background-color: #0056b3;
+    /* Change the background color on hover */
+}
+
+button.workbench-button:focus {
+    outline: none;
+    /* Remove the focus outline */
+}
