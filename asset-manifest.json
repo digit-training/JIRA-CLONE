@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jira-clone/static/css/main.4b07cc3d.css",
+    "main.js": "/jira-clone/static/js/main.46d631c2.js",
+    "index.html": "/jira-clone/index.html",
+    "main.4b07cc3d.css.map": "/jira-clone/static/css/main.4b07cc3d.css.map",
+    "main.46d631c2.js.map": "/jira-clone/static/js/main.46d631c2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b07cc3d.css",
+    "static/js/main.46d631c2.js"
+  ]
+}
