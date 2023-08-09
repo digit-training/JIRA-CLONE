@@ -27,8 +27,8 @@ const DashboardTop = () => {
                         <div className="circle">DM</div>
                         <div className="circle">PM</div>
                         {/* Add more circles for other names */}
+                        <button className="workbench-button">Workbench</button>
                     </div>
-                    <button className="workbench-button">Workbench</button>
                 </div>
             </div>
         </div>

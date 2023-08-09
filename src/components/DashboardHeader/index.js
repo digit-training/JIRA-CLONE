@@ -3,7 +3,7 @@ import { Grid, colors} from "@mui/material";
 // import TicketHolder from "../TicketHolder";
 const DashboardHeader = () => (
   <div>
-    <Grid container spacing={2} style={{ backgroundColor: colors.blueGrey[50], padding: "16px" }} >
+    <Grid container spacing={2} style={{ backgroundColor: colors.blueGrey[50], padding: "0px" }} >
       <Grid item md={12} >
         <Grid container spacing={2} >
             {["To Do","In Progress","Reopened","On Hold","To Review","In Review","Invalid","Dropped","Signed Off"].map( (item) => {
