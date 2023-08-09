@@ -28,12 +28,6 @@ function Navbar() {
     alert("You clicked Home!");
   };
 
-  const handleSignupClick = () => {
-    // Implement your signup logic here
-    navigate('/signup')
-    //alert("You clicked Signup!");
-  };
-
 
   const handleProfileClick = () => {
     // Implement your profile logic here
