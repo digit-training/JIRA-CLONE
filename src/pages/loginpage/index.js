@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -11,6 +12,7 @@ const LoginPage = () => {
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
+  const navigate = useNavigate();
   const handleKeepLoggedInChange = () => {
     setKeepLoggedIn(!keepLoggedIn);
   };
@@ -30,6 +32,8 @@ const LoginPage = () => {
           ? 'Login successful'
           : 'Connexion réussie'
       );
+
+      navigate('/home');
     } else if (username === "" || password === "" || email === "") {
       setLoginMessage(
         language === 'en'
@@ -43,9 +47,11 @@ const LoginPage = () => {
           : 'Identifiants invalides'
       );
     }
+
   };
   return (
     <div className="login-container">
+      <div className='login-box'>
       <h1>{language === 'en' ? 'Login to Jira' : 'Connexion à Jira'}</h1>
       <form>
         <div className="input-container">
@@ -128,6 +134,7 @@ const LoginPage = () => {
       </p><button className="lng-button" onClick={toggleLanguage}>
         {language === 'en' ? 'Switch to French' : 'Passer en anglais'}
       </button>
+      </div>
     </div>
   );
 };

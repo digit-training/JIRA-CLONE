@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
  import './style.css'
 function SignUpForm() {
     
@@ -7,6 +8,7 @@ function SignUpForm() {
     const [email, setEmail] = useState(null);
     const [password,setPassword] = useState(null);
     const [confirmPassword,setConfirmPassword] = useState(null);
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         const {id , value} = e.target;
@@ -30,6 +32,7 @@ function SignUpForm() {
 
     const handleSubmit  = () => {
         console.log(firstName,lastName,email,password,confirmPassword);
+        navigate('/home')
     }
 
     return(
@@ -58,7 +61,7 @@ function SignUpForm() {
             </div>
             <div className="footer">
                 <button  className="submit" onClick={()=>handleSubmit()} type="submit" class="btn">Submit</button>
-                <button className="login" onClick={()=>handleSubmit()} type="login" class="btn">Login</button>
+                <button className="login" onClick={() => navigate('/')} type="login" class="btn">Login</button>
 
             </div>
         </div>

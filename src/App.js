@@ -1,37 +1,22 @@
-import { useState } from "react";
-import { Button } from "@mui/material";
-import PopupScreen from "./components/CreateIssue";
-import Sidebar from './Components/Sidebar';
+import React from "react";
 import './App.css';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from './pages/dashboard';
 import Navbar from './components/Navbar';
 import LoginPage from "./pages/loginpage";
+import HomePage from "./pages/homepage/HomePage";
+import SignUp from "./components/Navbar/signup";
 
 function App() {
-  const [isPopupOpen, setPopupOpen] = useState(false);
-
-  const handleOpenPopup = () => {
-    setPopupOpen(true);
-  };
-
-  const handleClosePopup = () => {
-    setPopupOpen(false);
-  };
   return (
     <div className="App">
-      <div>
-      <LoginPage />
-      {/* <br />
-      <br />
-      <br />
-      <br /> */}
-      </div>
-     
-      <Navbar />
-      <Sidebar />
-      <Dashboard />
-
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
