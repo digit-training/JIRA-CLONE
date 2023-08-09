@@ -1,8 +1,8 @@
 import React from "react";
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from './pages/dashboard';
-import Navbar from './components/Navbar';
+import { useState } from "react";
+import { Button } from "@mui/material";
 import LoginPage from "./pages/loginpage";
 import HomePage from "./pages/homepage/HomePage";
 import SignUp from "./components/Navbar/signup";
