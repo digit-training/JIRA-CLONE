@@ -1,3 +1,5 @@
+
+
 .login-container {
   position: relative;
   top: 15%;
@@ -14,13 +16,11 @@
   background-color: #F0F8FF;
 }
 
-.login-box{
-  margin-top: 100px;
-}
-
 h1 {
-  margin-bottom: 20px;
-  color: #007BFF;
+  margin-bottom: 20px !important;
+  color: #007BFF !important;
+  font-size: 40px !important;
+  
 }
 .input-container {
   margin-bottom: 15px;
@@ -33,11 +33,11 @@ h1 {
   align-items: center;
   color: #333;
 }
-h1 {
+/* h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #007BFF;
-}
+} */
 .input-container {
   margin-bottom: 15px;
 }
@@ -49,7 +49,7 @@ h1 {
 }
 .input-field {
   width: 100%;
-  height: 10px; /* Adjust the height as needed */
+  height: 35px; /* Adjust the height as needed */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -68,9 +68,9 @@ h1 {
    margin-bottom: 10px;
 }
 .login-button {
-  background-color: #007BFF;
+  background-color: #007BFF !important;
   color: white;
-  border: none;
+  border:darkcyan;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;

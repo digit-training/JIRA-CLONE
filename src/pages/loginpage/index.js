@@ -51,8 +51,9 @@ const LoginPage = () => {
   };
   return (
     <div className="login-container">
-      <div className='login-box'>
-      <h1>{language === 'en' ? 'Login to Jira' : 'Connexion à Jira'}</h1>
+    
+  <h1> { language === 'en' ? 'Login to Jira' : 'Connexion à Jira'}</h1> 
+      
       <form>
         <div className="input-container">
           <label className="label">
@@ -129,13 +130,16 @@ const LoginPage = () => {
       <p>
         {language === 'en'
           ? 'By logging in, you agree to the '
-          : 'En vous connectant, vous acceptez la '}
-        <strong>{language === 'en' ? 'Privacy Policy' : 'Politique de confidentialité'}</strong>
+          : 'En vous , vous acceptez la '}
+        <strong>{language === 'en' ? 'Privacy Policy' : 'Polque confidentialité'}</strong>
+        <br />
+        <br />
+       
       </p><button className="lng-button" onClick={toggleLanguage}>
         {language === 'en' ? 'Switch to French' : 'Passer en anglais'}
       </button>
       </div>
-    </div>
+  
   );
 };
 export default LoginPage;
