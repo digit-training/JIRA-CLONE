@@ -51,9 +51,9 @@ const LoginPage = () => {
   };
   return (
     <div className="login-container">
-    
-  <h1> { language === 'en' ? 'Login to Jira' : 'Connexion à Jira'}</h1> 
-      
+
+      <h1> {language === 'en' ? 'Login to Jira' : 'Connexion à Jira'}</h1>
+
       <form>
         <div className="input-container">
           <label className="label">
@@ -101,20 +101,20 @@ const LoginPage = () => {
               onChange={handleKeepLoggedInChange}
             />
             <label htmlFor="keepLoggedIn">
-            &nbsp;
+              &nbsp;
               {language === 'en' ? keepLoginEng : ' Rester connecté '}
             </label>
           </div>
         </div>
         <div className="login-button-container">
-  <button className="login-button" type="button" onClick={handleSubmit}>
-    {language === 'en' ? 'Login' : 'Se connecter'}
-  </button>
-</div>
-        <div className='login-button-container'>
-        <p className="login-message">{loginMessage}</p>
+          <button className="login-button" type="button" onClick={handleSubmit}>
+            {language === 'en' ? 'Login' : 'Se connecter'}
+          </button>
         </div>
-       
+        <div className='login-button-container'>
+          <p className="login-message">{loginMessage}</p>
+        </div>
+
       </form>
       <div className="links-container">
         <a href="/forgot-password">
@@ -123,7 +123,7 @@ const LoginPage = () => {
       </div>
       <div className="sign-txt">
         {language === 'en' ? 'Not yet a member? ' : 'Pas encore membre ? '}
-        <a href="/signup">
+        <a onClick={() => { navigate("/signup") }}>
           {language === 'en' ? 'Signup now' : 'Inscrivez-vous maintenant'}
         </a>
       </div>
@@ -134,12 +134,12 @@ const LoginPage = () => {
         <strong>{language === 'en' ? 'Privacy Policy' : 'Polque confidentialité'}</strong>
         <br />
         <br />
-       
+
       </p><button className="lng-button" onClick={toggleLanguage}>
         {language === 'en' ? 'Switch to French' : 'Passer en anglais'}
       </button>
-      </div>
-  
+    </div>
+
   );
 };
 export default LoginPage;

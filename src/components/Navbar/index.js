@@ -28,6 +28,13 @@ function Navbar() {
     alert("You clicked Home!");
   };
 
+  const handleSignupClick = () => {
+    // Implement your signup logic here
+    navigate('/signup')
+    //alert("You clicked Signup!");
+  };
+
+
   const handleProfileClick = () => {
     // Implement your profile logic here
     alert("You clicked Profile!");
@@ -48,7 +55,7 @@ function Navbar() {
 
   return (
     <div id="navbar">
-      <button className="more-options-button" style={{marginLeft:"20px"}} onClick={handleMoreOptionsClick}>
+      <button className="more-options-button" style={{ marginLeft: "20px" }} onClick={handleMoreOptionsClick}>
         <i className="fas fa-ellipsis-v"></i>
       </button>
       <ApiIcon style={{ marginLeft: "3px" }}></ApiIcon>
@@ -79,7 +86,7 @@ function Navbar() {
         <i className="fas fa-search search-icon"></i>
       </div>
       <NotificationsIcon style={{ marginRight: "5px" }}> </NotificationsIcon>
-      <div className="settings-icon" style={{marginRight:"20px"}}>
+      <div className="settings-icon" style={{ marginRight: "20px" }}>
         <i className="fas fa-cog"></i>
       </div>
     </div>

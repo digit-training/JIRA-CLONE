@@ -1,72 +1,72 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
- import './style.css'
+import './style.css'
 function SignUpForm() {
-    
+
     const [firstName, setFirstName] = useState(null);
     const [lastName, setLastName] = useState(null);
     const [email, setEmail] = useState(null);
-    const [password,setPassword] = useState(null);
-    const [confirmPassword,setConfirmPassword] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [confirmPassword, setConfirmPassword] = useState(null);
     const navigate = useNavigate();
 
     const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        if(id === "firstName"){
+        const { id, value } = e.target;
+        if (id === "firstName") {
             setFirstName(value);
         }
-        if(id === "lastName"){
+        if (id === "lastName") {
             setLastName(value);
         }
-        if(id === "email"){
+        if (id === "email") {
             setEmail(value);
         }
-        if(id === "password"){
+        if (id === "password") {
             setPassword(value);
         }
-        if(id === "confirmPassword"){
+        if (id === "confirmPassword") {
             setConfirmPassword(value);
         }
 
     }
 
-    const handleSubmit  = () => {
-        console.log(firstName,lastName,email,password,confirmPassword);
+    const handleSubmit = () => {
+        console.log(firstName, lastName, email, password, confirmPassword);
         navigate('/home')
     }
 
-    return(
+    return (
         <div className="form">
             <div className="form-body">
                 <div className="username">
                     <label className="form__label" htmlFor="firstName">First Name </label>
-                    <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
+                    <input className="form__input" type="text" value={firstName} onChange={(e) => handleInputChange(e)} id="firstName" placeholder="First Name" />
                 </div>
                 <div className="lastname">
                     <label className="form__label" htmlFor="lastName">Last Name </label>
-                    <input  type="text" name="" id="lastName" value={lastName}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
+                    <input type="text" name="" id="lastName" value={lastName} className="form__input" onChange={(e) => handleInputChange(e)} placeholder="LastName" />
                 </div>
                 <div className="email">
                     <label className="form__label" htmlFor="email">Email </label>
-                    <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
+                    <input type="email" id="email" className="form__input" value={email} onChange={(e) => handleInputChange(e)} placeholder="Email" />
                 </div>
                 <div className="password">
                     <label className="form__label" htmlFor="password">Password </label>
-                    <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
+                    <input className="form__input" type="password" id="password" value={password} onChange={(e) => handleInputChange(e)} placeholder="Password" />
                 </div>
                 <div className="confirm-password">
                     <label className="form__label" htmlFor="confirmPassword">Confirm Password </label>
-                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
+                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => handleInputChange(e)} placeholder="Confirm Password" />
                 </div>
             </div>
             <div className="footer">
-                <button  className="submit" onClick={()=>handleSubmit()} type="submit" class="btn">Submit</button>
-                <button className="login" onClick={() => navigate('/')} type="login" class="btn">Login</button>
+                <button className="submit" onClick={() => handleSubmit()} type="submit" class="btn">Submit</button>
+                <button className="login" onClick={() => navigate('/JIRA-CLONE')} type="login" class="btn">Login</button>
 
             </div>
         </div>
-       
-    )       
+
+    )
 }
 
 export default SignUpForm
