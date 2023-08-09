@@ -70,7 +70,7 @@ input[type="text"] {
 div.search-icon {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 25px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #666;
@@ -107,7 +107,7 @@ div.search-div {
 button.workbench-button {
     height: 40px;
     /* Adjust the height to match the search bar */
-    width: 100px;
+    /* width: 100px; */
     /* Set the width to 100px */
     margin-left: 10px;
     /* Adjust the margin to add spacing between the button and the search bar */
