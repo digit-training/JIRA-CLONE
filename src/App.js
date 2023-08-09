@@ -13,8 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/JIRA-CLONE" element={<LoginPage />} />
-          <Route path="/JIRA-CLONE/home" element={<HomePage />} />
-          <Route path="/JIRA-CLONE/signup" element={<SignUp />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </div>
