@@ -9,7 +9,7 @@ const DashboardTop = () => {
     };
 
     return (
-        <div className="dashboard-container">
+        <div className="dashboardtop-container">
             <div className="header-topic">
                 <span>Projects / DPG / Workbench</span>
                 <h2>DPG:Workbench:Aug H1:23-24:Q2</h2>

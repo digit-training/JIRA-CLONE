@@ -1,0 +1,35 @@
+.dashboard-container {
+    /* width: 100vw; */
+    width: auto;
+    height: 65vh;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    min-height: 800px;
+}
+
+.grid-column {
+    border: 1px solid #ccc;
+    width: 300px;
+    padding: 10px;
+}
+
+.column-header {
+    background-color: #FFECB3;
+    padding: 10px;
+    width: 270px;
+}
