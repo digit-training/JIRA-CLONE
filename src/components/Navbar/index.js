@@ -27,11 +27,6 @@ function Navbar() {
     // Implement your home link logic here
     alert("You clicked Home!");
   };
-  const handleSignupClick = () => {
-    // Implement your signup logic here
-    navigate('/signUp')
-    //alert("You clicked Signup!");
-  };
 
   const handleProfileClick = () => {
     // Implement your profile logic here
@@ -64,9 +59,6 @@ function Navbar() {
       </a>
       <a href="#" onClick={handleProjectsClick}>
         Projects
-      </a>
-      <a href="#" onClick={handleSignupClick}>
-        Signup
       </a>
       <a href="#" onClick={handleProfileClick}>
         Profile
