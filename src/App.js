@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/JIRA_CLONE" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
