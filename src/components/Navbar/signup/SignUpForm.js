@@ -57,6 +57,7 @@ function SignUpForm() {
             </FormProvider>
         </div>
     );
+
 }
 
 export default SignUpForm;
