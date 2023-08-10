@@ -11,13 +11,10 @@ function SignUp(){
             <span>
               <h2 className="head">Sign Up</h2>
             </span>
-      
-
       </header>
       <SignUpForm/>
       </div>
     );
-
 }
 
 export default SignUp;

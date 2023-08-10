@@ -22,7 +22,7 @@ function Navbar() {
     // Implement your more options logic here
     alert("Clicked More Options!");
   };
-
+  
   const handleHomeClick = () => {
     // Implement your home link logic here
     alert("You clicked Home!");
