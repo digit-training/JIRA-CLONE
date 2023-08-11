@@ -1,72 +1,67 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm, FormProvider } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import './style.css'
-function SignUpForm() {
+import FormInput from './FormInput';
+import './style.css';
+import { Height } from '@mui/icons-material';
 
-    const [firstName, setFirstName] = useState(null);
-    const [lastName, setLastName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
-    const [confirmPassword, setConfirmPassword] = useState(null);
+function SignUpForm() {
+    const methods = useForm();
     const navigate = useNavigate();
 
-    const handleInputChange = (e) => {
-        const { id, value } = e.target;
-        if (id === "firstName") {
-            setFirstName(value);
-        }
-        if (id === "lastName") {
-            setLastName(value);
-        }
-        if (id === "email") {
-            setEmail(value);
-        }
-        if (id === "password") {
-            setPassword(value);
-        }
-        if (id === "confirmPassword") {
-            setConfirmPassword(value);
-        }
-
-    }
-
-    const handleSubmit = () => {
-        console.log(firstName, lastName, email, password, confirmPassword);
-        navigate('/home')
-    }
+    const onSubmit = (data) => {
+        console.log(data);
+        navigate('/home');
+    };
 
     return (
-        <div className="form">
-            <div className="form-body">
-                <div className="username">
-                    <label className="form__label" htmlFor="firstName">First Name </label>
-                    <input className="form__input" type="text" value={firstName} onChange={(e) => handleInputChange(e)} id="firstName" placeholder="First Name" />
-                </div>
-                <div className="lastname">
-                    <label className="form__label" htmlFor="lastName">Last Name </label>
-                    <input type="text" name="" id="lastName" value={lastName} className="form__input" onChange={(e) => handleInputChange(e)} placeholder="LastName" />
-                </div>
-                <div className="email">
-                    <label className="form__label" htmlFor="email">Email </label>
-                    <input type="email" id="email" className="form__input" value={email} onChange={(e) => handleInputChange(e)} placeholder="Email" />
-                </div>
-                <div className="password">
-                    <label className="form__label" htmlFor="password">Password </label>
-                    <input className="form__input" type="password" id="password" value={password} onChange={(e) => handleInputChange(e)} placeholder="Password" />
-                </div>
-                <div className="confirm-password">
-                    <label className="form__label" htmlFor="confirmPassword">Confirm Password </label>
-                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => handleInputChange(e)} placeholder="Confirm Password" />
-                </div>
-            </div>
-            <div className="footer">
-                <button className="submit" onClick={() => handleSubmit()} type="submit" class="btn">Submit</button>
-                <button className="login" onClick={() => navigate('/JIRA-CLONE')} type="login" class="btn">Login</button>
-
+        <div style={{ height: "70vh" }}>
+            <div className="form">
+                <FormProvider {...methods}>
+                    <form onSubmit={onSubmit} className="form-body">
+                        <FormInput
+                            name="firstName"
+                            label="First Name"
+                            inputType="text"
+                            validation={{ required: "First name is required" }}
+                        />
+                        <FormInput
+                            name="lastName"
+                            label="Last Name"
+                            inputType="text"
+                        />
+                        <FormInput
+                            name="email"
+                            label="Email"
+                            inputType="email"
+                            validation={{ required: "Email is required", pattern: /^\S+@\S+$/i }}
+                        />
+                        <FormInput
+                            name="password"
+                            label="Password"
+                            inputType="password"
+                            validation={{ required: "Password is required", minLength: 6 }}
+                        />
+                        <FormInput
+                            name="confirmPassword"
+                            label="Confirm Password"
+                            inputType="password"
+                            validation={{
+                                required: "Confirm Password is required",
+                                validate: (value) => value === methods.watch("password") || "Passwords do not match",
+                            }}
+                        />
+                        <div className="footer">
+                            <button className="submit btn" type="submit">Submit</button>
+                            <button className="login btn" onClick={() => navigate('/JIRA-CLONE')}>Login</button>
+                        </div>
+                    </form>
+                </FormProvider>
             </div>
         </div>
+    );
 
-    )
 }
 
-export default SignUpForm
+export default SignUpForm;
+
