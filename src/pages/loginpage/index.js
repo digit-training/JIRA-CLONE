@@ -100,7 +100,7 @@ const LoginPage = () => {
           </div>
         </form>
       </FormProvider>
-      
+
       <div className="links-container">
         <a href="/forgot-password">
           {language === 'en' ? 'Forgot Password?' : 'Mot de passe oublié ?'}
@@ -108,9 +108,8 @@ const LoginPage = () => {
       </div>
 
       <div className="sign-txt">
-        {language === 'en' ? 'Not yet a member? ' : 'Pas encore membre ? '}
         <a onClick={() => { navigate("/signup") }}>
-          {language === 'en' ? 'Signup now' : 'Inscrivez-vous maintenant'}
+          {language === 'en' ? 'Not yet a member? Signup now' : 'Pas encore membre ? Inscrivez-vous maintenant'}
         </a>
       </div>
 
