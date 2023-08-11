@@ -11,6 +11,8 @@
         var l = window.location;
         if (l.pathname == "/?/JIRA-CLONE/home") {
             l.replace("/JIRA-CLONE/home")
+        } else if (l.pathname == "/?/JIRA-CLONE/signup") {
+            l.replace("/JIRA-CLONE/signup")
         }
         l.replace(
             l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
