@@ -20,8 +20,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Check if node_modules exists
+        run: |
+          if [ -d "node_modules" ]; then
+            rm -rf node_modules
+          fi
+
       - name: Install dependencies
-        run: npm i
+        run: npm install
 
       - name: Build
         run: npm run build
