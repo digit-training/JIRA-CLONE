@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
 import {
   Button,
   Dialog,
@@ -21,6 +22,7 @@ import {
 } from "./data";
 
 const PopupScreen = ({ open, onClose }) => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     Project: "",
     Issue: "",
@@ -38,6 +40,10 @@ const PopupScreen = ({ open, onClose }) => {
 
   const handleSubmit = () => {
     // Implement your logic to handle form submission here
+    dispatch({
+      type: "ADD_CARDS",
+      payload: formData, // Add the form data as payload
+    });
     console.log("Form data:", formData);
     onClose();
   };

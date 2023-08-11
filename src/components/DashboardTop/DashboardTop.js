@@ -9,7 +9,7 @@ const DashboardTop = () => {
     };
 
     return (
-        <div className="dashboard-container">
+        <div className="dashboardtop-container">
             <div className="header-topic">
                 <span>Projects / DPG / Workbench</span>
                 <h2>DPG:Workbench:Aug H1:23-24:Q2</h2>
@@ -27,7 +27,7 @@ const DashboardTop = () => {
                         <div className="circle">DM</div>
                         <div className="circle">PM</div>
                         {/* Add more circles for other names */}
-                        <button className="workbench-button">Workbench</button>
+                        <button className="workbench-button"><span className='p-10'>Workbench</span></button>
                     </div>
                 </div>
             </div>

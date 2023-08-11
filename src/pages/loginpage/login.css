@@ -1,9 +1,17 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .login-container {
-  position: relative;
+  position: absolute;
   top: 15%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* This centers vertically */
+  justify-content: center;
+  /* This centers vertically */
   align-items: center;
   max-width: 400px;
   max-height: 100vh;
@@ -14,18 +22,18 @@
   background-color: #F0F8FF;
 }
 
-.login-box{
-  margin-top: 100px;
+h1 {
+  margin-bottom: 20px !important;
+  color: #007BFF !important;
+  font-size: 40px !important;
+
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: #007BFF;
-}
 .input-container {
   margin-bottom: 15px;
   text-align: left;
 }
+
 .input-container label {
   display: block;
   font-weight: bold;
@@ -33,50 +41,58 @@ h1 {
   align-items: center;
   color: #333;
 }
-h1 {
+
+/* h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #007BFF;
-}
+} */
 .input-container {
   margin-bottom: 15px;
 }
+
 .label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
   color: #333333;
 }
+
 .input-field {
   width: 100%;
-  height: 10px; /* Adjust the height as needed */
+  height: 35px;
+  /* Adjust the height as needed */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #333;
 }
+
 .keep-logged-in {
   display: flex;
   /* align-items: left; */
   /* justify-content: space-between;  */
   margin-bottom: 10px;
 }
+
 .keep-logged-in-checkbox {
   margin: 0;
   display: flex;
   align-items: center;
-   margin-bottom: 10px;
+  margin-bottom: 10px;
 }
+
 .login-button {
-  background-color: #007BFF;
+  background-color: #007BFF !important;
   color: white;
-  border: none;
+  border: darkcyan;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.lng-button{
+
+.lng-button {
   background-color: #5B6E83;
   color: white;
   border: none;
@@ -85,39 +101,58 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .login-button:hover {
   background-color: #0056B3;
 }
+
 .login-message {
   margin-top: 10px;
   margin-bottom: 5px;
   color: #007BFF;
 }
+
 .login-message {
-  margin-top: 5px; /* Adjusted margin for spacing */
-  margin-bottom: 10px; /* Added margin for spacing */
+  margin-top: 5px;
+  /* Adjusted margin for spacing */
+  margin-bottom: 10px;
+  /* Added margin for spacing */
   color: #007BFF;
 }
+
 .forgot-password {
   margin-top: 15px;
   color: #007BFF;
   text-decoration: none;
   display: block;
 }
+
 .forgot-password:hover {
   text-decoration: underline;
 }
+
 .sign-txt {
   text-align: center;
   margin-top: 15px;
   color: #333;
   font-size: 14px;
+  cursor: pointer;
+  /* Add this line to set the cursor to pointer on hover */
 }
+
+/* Optional: Add a hover effect to change the color when hovering */
+.sign-txt:hover {
+  color: #007bff;
+  /* Change to the desired color on hover */
+}
+
 .login-button-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Adjust the margin as needed */
+  margin-top: 20px;
+  /* Adjust the margin as needed */
 }
+
 .login-button {
   background-color: #007bff;
   color: white;
@@ -130,4 +165,10 @@ h1 {
 
 .login-button:hover {
   background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
 }

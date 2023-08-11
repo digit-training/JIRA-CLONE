@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your React App</title>
+  <script>
+    const pathSegments = window.location.pathname.split('/');
+    if (pathSegments.length === 2 && pathSegments[1] === 'JIRA-CLONE' && pathSegments[2] == 'home') {
+      // Redirect to the main page if the URL has "/JIRA-CLONE" prefix
+      window.location.replace('/JIRA-CLONE/home'); // Redirect to "/JIRA-CLONE/home"
+    } else if (pathSegments.length === 2 && pathSegments[1] === 'JIRA-CLONE' && pathSegments[2] == 'signup') {
+      // Redirect to the signup page if the URL has "/JIRA-CLONE/signup" pattern
+      window.location.replace('/JIRA-CLONE/signup'); // Redirect to "/JIRA-CLONE/signup"
+    }
+  </script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
+</html>

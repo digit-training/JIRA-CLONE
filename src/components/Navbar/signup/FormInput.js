@@ -26,4 +26,5 @@ function FormInput({ name, label,inputType, validation  }) {
     );
 }
 
+
 export default FormInput;
