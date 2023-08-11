@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import './style.css';
 
-function FormInput({ name, label,inputType, ...inputProps }) {
+function FormInput({ name, label,inputType, validation  }) {
     const {
         register,
         formState: { errors },
@@ -19,8 +19,7 @@ function FormInput({ name, label,inputType, ...inputProps }) {
             <input
                 className="form__input"
                 type="inputTpye"
-                {...register(name, inputProps.validation)}
-                {...inputProps}
+                {...register(name, validation)}
             />
             {errors[name] && <p className="error">{errors[name].message}</p>}
         </div>
