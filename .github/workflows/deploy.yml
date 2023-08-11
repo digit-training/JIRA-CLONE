@@ -1,4 +1,4 @@
-name: Deploy to GitHub Page
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -10,8 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.21.3'
+        
     - name: Install Dependencies
       run: npm ci
+
+    - name: Build App
+      run: npm run build
 
     - name: Deploy
       run: npm run deploy
