@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,3 +34,4 @@ jobs:
 
       - name: Build
         run: npm run build
+
