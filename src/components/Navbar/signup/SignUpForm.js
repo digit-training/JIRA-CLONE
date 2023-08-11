@@ -53,7 +53,7 @@ function SignUpForm() {
                         />
                         <div className="footer">
                             <button className="submit btn" type="submit">Submit</button>
-                            <button className="login btn" onClick={() => navigate('/JIRA-CLONE')}>Login</button>
+                            <button className="login btn" onClick={() => navigate('/')}>Login</button>
                         </div>
                     </form>
                 </FormProvider>
