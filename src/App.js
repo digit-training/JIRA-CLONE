@@ -15,6 +15,8 @@ function App() {
   
   return (
     <div className="App">
+
+   
       <BrowserRouter basename="/JIRA-CLONE"> {/* Adjust the basename */}
         <Routes>
           <Route path="/" element={<LoginPage />} />
