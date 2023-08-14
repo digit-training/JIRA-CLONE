@@ -28,10 +28,15 @@ function Navbar() {
     alert("You clicked Home!");
   };
 
-  const handleSignupClick = () => {
-    // Implement your signup logic here
-    navigate('/signup')
-    //alert("You clicked Signup!");
+  // const handleSignupClick = () => {
+  //   // Implement your signup logic here
+  //   navigate('/signup')
+  //   //alert("You clicked Signup!");
+  // };
+
+  const handleSidebarToggle = () => {
+    // Implement your sidebar toggle logic here
+    alert("Toggled Sidebar!");
   };
 
 
@@ -54,9 +59,12 @@ function Navbar() {
   };
 
   return (
-    <div id="navbar">
-      <button className="more-options-button" style={{ marginLeft: "20px" }} onClick={handleMoreOptionsClick}>
-        <i className="fas fa-ellipsis-v"></i>
+    <div id="navbar" className="flex items-center justify-between">
+      <button 
+      className="more-options-button md:hidden ml-3"
+      onClick={handleSidebarToggle}>
+        {/* <i className="fas fa-ellipsis-v"></i> */}
+        <i className="fas fa-bars"></i>
       </button>
       <ApiIcon style={{ marginLeft: "3px" }}></ApiIcon>
       <span>Jira Software</span>
