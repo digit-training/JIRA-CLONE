@@ -33,12 +33,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-container flex justify-center items-center h-screen ">
+    <div className="login-container flex justify-center items-center ">
       <h1> {language === 'en' ? 'Login to Jira' : 'Connexion à Jira'}</h1>
 
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <FormInput className = " text-center md:text-left"
+          <FormInput className=" text-center md:text-left"
             name="username"
             label={language === 'en' ? 'Username:' : 'Nom d\'utilisateur :'}
             validation={{
