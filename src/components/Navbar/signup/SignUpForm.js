@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +15,7 @@ function SignUpForm() {
     };
 
     return (
-        <div className="form">
+        <div className="form ">
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)} className="form-body">
                     <FormInput
@@ -49,8 +50,8 @@ function SignUpForm() {
                             validate: (value) => value === methods.watch("password") || "Passwords do not match",
                         }}
                     />
-                    <div className="footer">
-                        <button className="submit btn" type="submit">Submit</button>
+                    <div className="footer flex flex-col md:flex-row md:items-center justify-between">
+                        <button className="submit btn mb-4 md:mb-0 md:mr-4" type="submit">Submit</button>
                         <button className="login btn" onClick={() => navigate('/')}>Login</button>
                     </div>
                 </form>
@@ -60,6 +61,5 @@ function SignUpForm() {
 }
 
 export default SignUpForm;
-
 
 
