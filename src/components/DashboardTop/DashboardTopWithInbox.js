@@ -66,8 +66,10 @@ const DashboardTopWithInbox = () => {
                     }
 
                     const states = response?.data?.BusinessServices?.[0]?.states || [];
-                    const stateNames = states.map(state => state.state);
+                    var stateNames = states.map(state => state.state);  
                     stateNames[0] = "TODO";
+                    const newStateNames = stateNames.slice(1);
+                    stateNames = newStateNames;
                     dispatch({
                         type: "UPDATE_BUSINESS_SERVICE_STATES", // Your actual action type
                         payload: stateNames,
