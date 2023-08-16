@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, colors } from "@mui/material";
 import DashboardHeader from "../../components/DashboardHeader";
 import TicketHolder from "../../components/TicketHolder";
-import DashboardTop from "../../components/DashboardTop/DashboardTop";
+import DashboardTop from "../../components/DashboardTop/DashboardTop.js";
 import Sidebar from "../../components/Sidebar/index";
 import Navbar from "../../components/Navbar";
 

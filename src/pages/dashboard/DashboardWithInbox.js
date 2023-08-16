@@ -2,11 +2,12 @@ import React from "react";
 import { Grid, colors } from "@mui/material";
 import DashboardHeader from "../../components/DashboardHeader";
 import TicketHolder from "../../components/TicketHolder";
-import DashboardTop from "../../components/DashboardTop/DashboardTop";
+import DashboardTop from "../../components/DashboardTop/DashboardTopWithInbox";
 import Sidebar from "../../components/Sidebar/index";
 import Navbar from "../../components/Navbar";
 import Inbox from "../../components/Navbar/inbox.js";
 import DashboardHeaderWithInbox from "../../components/DashboardHeader/DashboardHeaderWithInbox";
+import DashboardTopWithInbox from "../../components/DashboardTop/DashboardTopWithInbox";
 
 const DashboardWithInbox = () => (
   <div>
@@ -17,7 +18,7 @@ const DashboardWithInbox = () => (
       <Sidebar />
     </div>
     <div style={{ flex: "1", backgroundColor: colors.blueGrey[50], maxWidth: "calc(100% - 17%)" }}>
-      <DashboardTop />
+      <DashboardTopWithInbox />
       <DashboardHeaderWithInbox />
       {/* <hr/> */}
       {/* <TicketHolder/> */}
