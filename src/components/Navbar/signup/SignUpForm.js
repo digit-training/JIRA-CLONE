@@ -15,7 +15,7 @@ function SignUpForm() {
     };
 
     return (
-        <div className="form">
+        <div className="form ">
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)} className="form-body">
                     <FormInput

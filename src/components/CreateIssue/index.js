@@ -46,6 +46,15 @@ const PopupScreen = ({ open, onClose }) => {
       payload: formData, // Add the form data as payload
     });
     console.log("Form data:", formData);
+    setFormData({
+      Project: "",
+      Issue: "",
+      Status: "",
+      Labels: "",
+      message: "",
+      summary: "",
+      Components: "",
+    });
     onClose();
   };
 

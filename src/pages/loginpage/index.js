@@ -1,12 +1,11 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useForm, FormProvider } from "react-hook-form";
+import FormInput from "../../components/Navbar/signup/FormInput";
 
-
-
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useForm, FormProvider } from 'react-hook-form';
-import FormInput from '../../components/Navbar/signup/FormInput';
-
-import './login.css';
+import "./login.css";
+import { useQuery } from "@tanstack/react-query";
+import fetchData from "../../fetchData";
 
 const LoginPage = () => {
   const methods = useForm();
@@ -15,7 +14,7 @@ const LoginPage = () => {
 
   const [loginMessage, setLoginMessage] = useState("");
   const [keepLoggedIn, setKeepLoggedIn] = useState(false);
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState("en");
   const keepLoginEng = " Keep me Logged in";
 
   const navigate = useNavigate();
@@ -25,22 +24,23 @@ const LoginPage = () => {
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'fr' : 'en');
+    setLanguage(language === "en" ? "fr" : "en");
   };
 
   const onSubmit = (data) => {
-    navigate('/home');
+    navigate("/home");
   };
 
   return (
-    <div className="login-container">
-      <h1> {language === 'en' ? 'Login to Jira' : 'Connexion à Jira'}</h1>
+    <div className="login-container flex justify-center items-center ">
+      <h1> {language === "en" ? "Login to Jira" : "Connexion à Jira"}</h1>
 
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormInput
+            className=" text-center md:text-left"
             name="username"
-            label={language === 'en' ? 'Username:' : 'Nom d\'utilisateur :'}
+            label={language === "en" ? "Username:" : "Nom d'utilisateur :"}
             validation={{
               required: "Username is required",
             }}
@@ -48,7 +48,7 @@ const LoginPage = () => {
 
           <FormInput
             name="email"
-            label={language === 'en' ? 'Email:' : 'Email :'}
+            label={language === "en" ? "Email:" : "Email :"}
             validation={{
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -59,7 +59,7 @@ const LoginPage = () => {
 
           <FormInput
             name="password"
-            label={language === 'en' ? 'Password:' : 'Mot de passe :'}
+            label={language === "en" ? "Password:" : "Mot de passe :"}
             validation={{
               required: "Password is required",
               minLength: {
@@ -85,17 +85,17 @@ const LoginPage = () => {
               />
               <label htmlFor="keepLoggedIn">
                 &nbsp;
-                {language === 'en' ? keepLoginEng : ' Rester connecté '}
+                {language === "en" ? keepLoginEng : " Rester connecté "}
               </label>
             </div>
           </div>
 
           <div className="login-button-container">
             <button className="login-button" type="submit">
-              {language === 'en' ? 'Login' : 'Se connecter'}
+              {language === "en" ? "Login" : "Se connecter"}
             </button>
           </div>
-          <div className='login-button-container'>
+          <div className="login-button-container">
             <p className="login-message">{loginMessage}</p>
           </div>
         </form>
@@ -103,27 +103,35 @@ const LoginPage = () => {
 
       <div className="links-container">
         <a href="/forgot-password">
-          {language === 'en' ? 'Forgot Password?' : 'Mot de passe oublié ?'}
+          {language === "en" ? "Forgot Password?" : "Mot de passe oublié ?"}
         </a>
       </div>
 
       <div className="sign-txt">
-        <a onClick={() => { navigate("/signup") }}>
-          {language === 'en' ? 'Not yet a member? Signup now' : 'Pas encore membre ? Inscrivez-vous maintenant'}
+        <a
+          onClick={() => {
+            navigate("/signup");
+          }}
+        >
+          {language === "en"
+            ? "Not yet a member? Signup now"
+            : "Pas encore membre ? Inscrivez-vous maintenant"}
         </a>
       </div>
 
       <p>
-        {language === 'en'
-          ? 'By logging in, you agree to the '
-          : 'En vous , vous acceptez la '}
-        <strong>{language === 'en' ? 'Privacy Policy' : 'Polque confidentialité'}</strong>
+        {language === "en"
+          ? "By logging in, you agree to the "
+          : "En vous , vous acceptez la "}
+        <strong>
+          {language === "en" ? "Privacy Policy" : "Polque confidentialité"}
+        </strong>
         <br />
         <br />
       </p>
 
       <button className="lng-button" onClick={toggleLanguage}>
-        {language === 'en' ? 'Switch to French' : 'Passer en anglais'}
+        {language === "en" ? "Switch to French" : "Passer en anglais"}
       </button>
       {/* Rest of your code */}
     </div>
@@ -131,3 +139,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
