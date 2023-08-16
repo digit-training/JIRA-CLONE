@@ -32,7 +32,7 @@ const DashboardTopWithInbox = () => {
                     });
                     console.log(stateNames);
                 } catch (error) {
-                    response = {
+                    var response = {
                         date:{}
                     }
                     response.data = pgrData;
