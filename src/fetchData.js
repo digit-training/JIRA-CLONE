@@ -11,7 +11,7 @@ const fetchData = async (url, params, additionalData) => {
       did: "1",
       key: "",
       msgId: "20170310130900|en_IN",
-      authToken: "b7cab3d0-b166-42cb-a96a-66f6b5fcaa67",
+      authToken: "b44e01fd-5748-44aa-9b48-e3e702477926",
     },
     ...additionalData,
   };
@@ -22,8 +22,8 @@ const fetchData = async (url, params, additionalData) => {
         params: params,
       })
       .then((response) => {
-       console.log(response," rrrrrrrrrrrrrrrrrrrr");
-       return response;
+        console.log(response, " rrrrrrrrrrrrrrrrrrrr");
+        return response;
       });
     return response;
   } catch (error) {
