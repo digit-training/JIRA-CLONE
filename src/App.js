@@ -11,7 +11,7 @@ import SignUp from "./components/Navbar/signup";
 
 function App() {
   return (
-    <div className="App">sssssssssssssssssssssssss
+    <div className="App">
       <BrowserRouter basename="/JIRA-CLONE">
         <Routes>
           <Route path="/" element={<LoginPage />} />
