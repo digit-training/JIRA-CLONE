@@ -5,8 +5,6 @@ import './DashboardTopWithInbox.css'; // Import the CSS file
 import fetchData from '../../fetchData';
 // import { updateBusinessServiceStates } from '../../redux/actions'; // Import the action creator
 
-
-
 const DashboardTopWithInbox = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Workbench');
