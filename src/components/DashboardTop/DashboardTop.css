@@ -51,6 +51,7 @@ div.header-topic {
     top: 10px;
     left: 10px;
     align-items: flex-start;
+    margin-left: 15px;
 }
 
 div.search-container {

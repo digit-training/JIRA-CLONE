@@ -22,6 +22,12 @@
     align-items: center;
 }
 
+
+@media (max-width: 768px) { /* You can adjust the max-width value based on your needs */
+    .hidden {
+        display: inline-block !important;
+    }
+}
 .dpg {
     text-align: center;
     padding-top: 40px;

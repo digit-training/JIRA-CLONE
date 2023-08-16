@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import {
   Button,
   Dialog,
@@ -15,6 +15,7 @@ import {
 import CustomDropdown from "../CustomDropdown";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import {
+  componentOptions,
   issueOptions,
   labelOptions,
   projectOptions,
@@ -131,7 +132,7 @@ const PopupScreen = ({ open, onClose }) => {
               label="Components"
               name="Components"
               value={formData.Components}
-              options={labelOptions}
+              options={componentOptions}
               onChange={handleChange}
               width={"50%"}
             />

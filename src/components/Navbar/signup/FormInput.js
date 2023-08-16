@@ -12,7 +12,7 @@ function FormInput({ name, label,inputType, validation  }) {
     const password = watch("password");
 
     return (
-        <div className={`${name}-container`}>
+        <div className="{`${name}-container`} text-center md:text-left">
             <label className="form__label" htmlFor={name}>
                 {label}
             </label>
