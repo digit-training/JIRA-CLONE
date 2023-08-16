@@ -1,12 +1,26 @@
+// HomePage.js
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Dashboard from "../dashboard";
+import Inbox from "../../components/Navbar/inbox";
+import DashboardWithInbox from "../dashboard/DashboardWithInbox";
 
-const HomePage = () => (
-  <div>
-      <Navbar/>
-      <Dashboard/>
-  </div>
-);
+function HomePage() {
+  return (
+    <OutletContent />
+  );
+}
 
-export default HomePage ;
+function OutletContent() {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/inbox" element={<DashboardWithInbox />} />
+      </Routes>
+    </>
+  );
+}
+
+export default HomePage;

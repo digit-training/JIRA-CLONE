@@ -5,16 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import "./Navbar.css";
 import { Button } from "@mui/material";
 import PopupScreen from "../CreateIssue";
-import Inbox from "./inbox";
-import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Inbox() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const navigate = useNavigate();
-
-  const handleInboxClick = () => {
-    navigate('/inbox'); // Navigate to the Inbox page under /home
-  };
 
   const handleOpenPopup = () => {
     setPopupOpen(true);
@@ -34,15 +28,10 @@ function Navbar() {
     alert("You clicked Home!");
   };
 
-  // const handleSignupClick = () => {
-  //   // Implement your signup logic here
-  //   navigate('/signup')
-  //   //alert("You clicked Signup!");
-  // };
-
-  const handleSidebarToggle = () => {
-    // Implement your sidebar toggle logic here
-    alert("Toggled Sidebar!");
+  const handleSignupClick = () => {
+    // Implement your signup logic here
+    navigate('/signup')
+    //alert("You clicked Signup!");
   };
 
 
@@ -65,12 +54,9 @@ function Navbar() {
   };
 
   return (
-    <div id="navbar" className="flex items-center justify-between">
-      <button 
-      className="more-options-button md:hidden ml-3"
-      onClick={handleSidebarToggle}>
-        {/* <i className="fas fa-ellipsis-v"></i> */}
-        <i className="fas fa-bars"></i>
+    <div id="navbar">
+      <button className="more-options-button" style={{ marginLeft: "20px" }} onClick={handleMoreOptionsClick}>
+        <i className="fas fa-ellipsis-v"></i>
       </button>
       <ApiIcon style={{ marginLeft: "3px" }}></ApiIcon>
       <span>Jira Software</span>
@@ -84,10 +70,9 @@ function Navbar() {
       <a href="#" onClick={handleProfileClick}>
         Profile
       </a>
-      <a href="#" onClick={handleInboxClick}>
+      <a href="#" onClick={handleProfileClick}>
         Inbox
       </a>
- 
 
 
       <Button variant="contained" color="primary" onClick={handleOpenPopup}>
@@ -112,4 +97,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Inbox;
