@@ -10,19 +10,15 @@ import HomePage from "./pages/homepage/HomePage";
 import SignUp from "./components/Navbar/signup";
 
 function App() {
-
-
-  
   return (
     <div className="App">
-      <BrowserRouter basename="/JIRA-CLONE"> {/* Adjust the basename */}
+      <BrowserRouter basename="/JIRA-CLONE">
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }

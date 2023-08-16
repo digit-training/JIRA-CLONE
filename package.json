@@ -11,6 +11,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
+    "@tanstack/react-query": "^4.32.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -55,6 +56,8 @@
   },
   "devDependencies": {
     "@hookform/devtools": "^4.3.1",
+    "@tanstack/eslint-plugin-query": "^4.32.5",
     "gh-pages": "^5.0.0"
-  }
+  },
+  "proxy": "https://qa.digit.org"
 }
