@@ -4,9 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 import './DashboardTopWithInbox.css'; // Import the CSS file
 import fetchData from '../../fetchData';
 import pgrData from '../../alternateJSON/PGRJSON';
-// import { updateBusinessServiceStates } from '../../redux/actions'; // Import the action creator
-
-
 
 const DashboardTopWithInbox = () => {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -25,8 +22,7 @@ const DashboardTopWithInbox = () => {
                 const additionalData = {};
 
                 try {
-                    var response = await fetchData(url, params, additionalData);
-                    console.log(response);
+                    const response = await fetchData(url, params, additionalData);
                     const states = response?.data?.BusinessServices?.[0]?.states || [];
                     const stateNames = states.map(state => state.state);
                     stateNames[0] = "TODO";
