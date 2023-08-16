@@ -5,10 +5,12 @@ import TicketHolder from "../../components/TicketHolder";
 import DashboardTop from "../../components/DashboardTop/DashboardTop";
 import Sidebar from "../../components/Sidebar/index";
 import Navbar from "../../components/Navbar";
+import Inbox from "../../components/Navbar/inbox.js";
+import DashboardHeaderWithInbox from "../../components/DashboardHeader/DashboardHeaderWithInbox";
 
-const Dashboard = () => (
+const DashboardWithInbox = () => (
   <div>
-  <Navbar/>
+  <Inbox/>
   <div style={{ display: "flex", width: "100%" }}>
     <div style={{ flex: "0 0 17%", backgroundColor: colors.lightBlue[50], paddingLeft: "0px" }}>
       {/* <h1>Sidebar</h1> */}
@@ -16,7 +18,7 @@ const Dashboard = () => (
     </div>
     <div style={{ flex: "1", backgroundColor: colors.blueGrey[50], maxWidth: "calc(100% - 17%)" }}>
       <DashboardTop />
-      <DashboardHeader />
+      <DashboardHeaderWithInbox />
       {/* <hr/> */}
       {/* <TicketHolder/> */}
     </div>
@@ -24,4 +26,4 @@ const Dashboard = () => (
   </div>
 );
 
-export default Dashboard;
+export default DashboardWithInbox;

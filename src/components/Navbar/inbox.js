@@ -5,16 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import "./Navbar.css";
 import { Button } from "@mui/material";
 import PopupScreen from "../CreateIssue";
-import Inbox from "./inbox";
-import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Inbox() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const navigate = useNavigate();
-
-  const handleInboxClick = () => {
-    navigate('/inbox'); // Navigate to the Inbox page under /home
-  };
 
   const handleOpenPopup = () => {
     setPopupOpen(true);
@@ -76,10 +70,9 @@ function Navbar() {
       <a href="#" onClick={handleProfileClick}>
         Profile
       </a>
-      <a href="#" onClick={handleInboxClick}>
+      <a href="#" onClick={handleProfileClick}>
         Inbox
       </a>
- 
 
 
       <Button variant="contained" color="primary" onClick={handleOpenPopup}>
@@ -104,4 +97,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Inbox;
