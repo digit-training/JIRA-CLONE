@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'; // Import useDispatch
 import { useQuery } from '@tanstack/react-query';
 import './DashboardTopWithInbox.css'; // Import the CSS file
 import fetchData from '../../fetchData';
+import pgrData from '../../alternateJSON/PGRJSON';
 // import { updateBusinessServiceStates } from '../../redux/actions'; // Import the action creator
 
 
@@ -19,12 +20,13 @@ const DashboardTopWithInbox = () => {
         ['apiData', selectedOption],
         async () => {
             if (selectedOption === 'PGR') {
-                const url = '/egov-wf/businessservice/_search';
+                const url = '/egov-wf/businessservic/_search';
                 const params = { tenantId: 'pb.amritsar', businessServices: 'PGR' };
                 const additionalData = {};
 
                 try {
-                    const response = await fetchData(url, params, additionalData);
+                    var response = await fetchData(url, params, additionalData);
+                    console.log(response);
                     const states = response?.data?.BusinessServices?.[0]?.states || [];
                     const stateNames = states.map(state => state.state);
                     stateNames[0] = "TODO";
@@ -34,7 +36,18 @@ const DashboardTopWithInbox = () => {
                     });
                     console.log(stateNames);
                 } catch (error) {
-                    console.error(error);
+                    response = {
+                        date:{}
+                    }
+                    response.data = pgrData;
+                    const states = response?.data?.BusinessServices?.[0]?.states || [];
+                    const stateNames = states.map(state => state.state);
+                    stateNames[0] = "TODO";
+                    dispatch({
+                        type: "UPDATE_BUSINESS_SERVICE_STATES", // Your actual action type
+                        payload: stateNames,
+                    });
+                    //console.error(error);
                 }
             }
             return null;
