@@ -4,6 +4,11 @@ import { useQuery } from '@tanstack/react-query';
 import './DashboardTopWithInbox.css'; // Import the CSS file
 import fetchData from '../../fetchData';
 import pgrData from '../../alternateJSON/PGRJSON';
+import dtrData from '../../alternateJSON/DTRJSON';
+import editRenewalData from '../../alternateJSON/EDITRENEWALJSON';
+// import { updateBusinessServiceStates } from '../../redux/actions'; // Import the action creator
+
+
 
 const DashboardTopWithInbox = () => {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -16,13 +21,24 @@ const DashboardTopWithInbox = () => {
     const { data: apiData, isLoading, error } = useQuery(
         ['apiData', selectedOption],
         async () => {
+            const url = '/egov-wf/businessservice/_search';
+            var params = {};
+            const additionalData = {};
+            var dataSet = false;
             if (selectedOption === 'PGR') {
-                const url = '/egov-wf/businessservice/_search';
-                const params = { tenantId: 'pb.amritsar', businessServices: 'PGR' };
-                const additionalData = {};
-
+                params = { tenantId: 'pb.amritsar', businessServices: 'PGR' };
+                dataSet = true;
+            } else if (selectedOption === 'EDITRENEWAL') {
+                params = { tenantId: 'pb.amritsar', businessServices: 'EDITRENEWAL' };
+                dataSet = true;
+            } else if ((selectedOption === 'DTR')) {
+                params = { tenantId: 'pb.amritsar', businessServices: 'DTR' };
+                dataSet = true;
+            }
+            if (dataSet) {
                 try {
-                    const response = await fetchData(url, params, additionalData);
+                    var response = await fetchData(url, params, additionalData);
+                    console.log(response);
                     const states = response?.data?.BusinessServices?.[0]?.states || [];
                     const stateNames = states.map(state => state.state);
                     stateNames[0] = "TODO";
@@ -33,9 +49,16 @@ const DashboardTopWithInbox = () => {
                     console.log(stateNames);
                 } catch (error) {
                     var response = {
-                        date:{}
+                        date: {}
                     }
-                    response.data = pgrData;
+                    if (selectedOption === 'PGR') {
+                        response.data = pgrData;
+                    } else if (selectedOption === 'EDITRENEWAL') {
+                        response.data = editRenewalData;
+                    } else {
+                        response.data = dtrData;
+                    }
+
                     const states = response?.data?.BusinessServices?.[0]?.states || [];
                     const stateNames = states.map(state => state.state);
                     stateNames[0] = "TODO";
@@ -46,6 +69,7 @@ const DashboardTopWithInbox = () => {
                     //console.error(error);
                 }
             }
+
             return null;
         }
     );
@@ -83,8 +107,8 @@ const DashboardTopWithInbox = () => {
                             {showDropdown && (
                                 <div className="dropdown-content">
                                     <div onClick={() => handleOptionSelect('PGR')}>PGR</div>
-                                    <div onClick={() => handleOptionSelect('Option 2')}>Option 2</div>
-                                    <div onClick={() => handleOptionSelect('Option 3')}>Option 3</div>
+                                    <div onClick={() => handleOptionSelect('EDITRENEWAL')}>EDITRENEWAL</div>
+                                    <div onClick={() => handleOptionSelect('DTR')}>DTR</div>
                                 </div>
                             )}
                         </div>
