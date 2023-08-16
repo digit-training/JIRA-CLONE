@@ -16,6 +16,11 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 businessServiceStates: action.payload,
             };
+        case "NEW_CARDS":
+            return {
+                ...state,
+                cards: action.payload?.data?.ProcessInstances,
+            };
         // other cases
         default:
             return state;
