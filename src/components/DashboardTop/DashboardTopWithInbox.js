@@ -20,7 +20,7 @@ const DashboardTopWithInbox = () => {
         ['apiData', selectedOption],
         async () => {
             if (selectedOption === 'PGR') {
-                const url = '/egov-wf/businessservic/_search';
+                const url = '/egov-wf/businessservice/_search';
                 const params = { tenantId: 'pb.amritsar', businessServices: 'PGR' };
                 const additionalData = {};
 
