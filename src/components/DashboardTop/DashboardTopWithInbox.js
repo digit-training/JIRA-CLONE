@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'; // Import useDispatch
 import { useQuery } from '@tanstack/react-query';
 import './DashboardTopWithInbox.css'; // Import the CSS file
 import fetchData from '../../fetchData';
-// import { updateBusinessServiceStates } from '../../redux/actions'; // Import the action creator
+import pgrData from '../../alternateJSON/PGRJSON';
 
 const DashboardTopWithInbox = () => {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -32,7 +32,18 @@ const DashboardTopWithInbox = () => {
                     });
                     console.log(stateNames);
                 } catch (error) {
-                    console.error(error);
+                    response = {
+                        date:{}
+                    }
+                    response.data = pgrData;
+                    const states = response?.data?.BusinessServices?.[0]?.states || [];
+                    const stateNames = states.map(state => state.state);
+                    stateNames[0] = "TODO";
+                    dispatch({
+                        type: "UPDATE_BUSINESS_SERVICE_STATES", // Your actual action type
+                        payload: stateNames,
+                    });
+                    //console.error(error);
                 }
             }
             return null;
