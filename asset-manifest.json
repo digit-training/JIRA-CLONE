@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/JIRA-CLONE/static/css/main.187aba4f.css",
-    "main.js": "/JIRA-CLONE/static/js/main.d63b0fba.js",
+    "main.js": "/JIRA-CLONE/static/js/main.807b1afd.js",
     "index.html": "/JIRA-CLONE/index.html",
     "main.187aba4f.css.map": "/JIRA-CLONE/static/css/main.187aba4f.css.map",
-    "main.d63b0fba.js.map": "/JIRA-CLONE/static/js/main.d63b0fba.js.map"
+    "main.807b1afd.js.map": "/JIRA-CLONE/static/js/main.807b1afd.js.map"
   },
   "entrypoints": [
     "static/css/main.187aba4f.css",
-    "static/js/main.d63b0fba.js"
+    "static/js/main.807b1afd.js"
   ]
 }
