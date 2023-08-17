@@ -12,13 +12,13 @@
   font-style: bold;
   font-size: 18;
   text-align: left;
-  padding: 35px 16px;
+  padding: 3px 16px;
   text-decoration: none;
   transition: background-color 0.3s;
 }
 
 #navbar a:hover {
-  background-color: #555;
+  background-color: #59616e;
 }
 
 
