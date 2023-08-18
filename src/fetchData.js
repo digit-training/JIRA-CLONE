@@ -22,7 +22,6 @@ const fetchData = async (url, params, additionalData) => {
         params: params,
       })
       .then((response) => {
-        console.log(response, " rrrrrrrrrrrrrrrrrrrr");
         return response;
       });
     return response;

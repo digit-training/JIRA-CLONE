@@ -140,22 +140,22 @@ button.workbench-button:focus {
 .workbench-dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .workbench-button {
+}
+
+.workbench-button {
     background-color: #3498db;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     position: relative;
-  }
-  
-  .dropdown-icon {
+}
+
+.dropdown-icon {
     margin-left: 5px;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     position: absolute;
     top: 100%;
     left: 0;
@@ -164,18 +164,34 @@ button.workbench-button:focus {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     display: none;
-  }
-  
-  .workbench-dropdown:hover .dropdown-content {
+}
+
+.workbench-dropdown:hover .dropdown-content {
     display: block;
-  }
-  
-  .dropdown-content div {
+}
+
+.dropdown-content div {
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-  }
-  
-  .dropdown-content div:hover {
+}
+
+.dropdown-content div:hover {
     background-color: #f2f2f2;
-  }
+}
+
+.count-button {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+}
+
+.count-button span {
+    margin-right: 5px;
+}

@@ -11,19 +11,19 @@ import DashboardTopWithInbox from "../../components/DashboardTop/DashboardTopWit
 
 const DashboardWithInbox = () => (
   <div>
-  <Inbox/>
-  <div style={{ display: "flex", width: "100%" }}>
-    <div style={{ flex: "0 0 17%", backgroundColor: colors.lightBlue[50], paddingLeft: "0px" }}>
-      {/* <h1>Sidebar</h1> */}
-      <Sidebar />
+    <Inbox />
+    <div style={{ display: "flex", width: "100%" }}>
+      <div style={{ flex: "0 0 17%", backgroundColor: colors.lightBlue[50], paddingLeft: "0px" }}>
+        {/* <h1>Sidebar</h1> */}
+        <Sidebar />
+      </div>
+      <div style={{ flex: "1", backgroundColor: colors.blueGrey[50], maxWidth: "calc(100% - 17%)" }}>
+        <DashboardTopWithInbox />
+        {/* <DashboardHeaderWithInbox /> */}
+        {/* <hr/> */}
+        {/* <TicketHolder/> */}
+      </div>
     </div>
-    <div style={{ flex: "1", backgroundColor: colors.blueGrey[50], maxWidth: "calc(100% - 17%)" }}>
-      <DashboardTopWithInbox />
-      <DashboardHeaderWithInbox />
-      {/* <hr/> */}
-      {/* <TicketHolder/> */}
-    </div>
-  </div>
   </div>
 );
 
